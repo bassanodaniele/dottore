@@ -12,11 +12,11 @@
 
 <h2>Lista prenotazioni</h2>
 
-<ul class="cars">
-  <li *ngFor="let car of cars"
-    [class.selected]="car === selectedCar"
-    (click)="onSelect(car)">
-    <span class="badge">{{car.id}}</span> <span class="ins">{{car.name}}: {{car.costo}} €</span>
+<ul>
+  <li *ngFor="let visita of visite"
+    [class.selected]="visita === selectedVisita"
+    (click)="onSelect(visita)">
+    <span>{{visita.date}} -> {{visita.name}}</span>
   </li>
 </ul>
 

@@ -41,6 +41,10 @@ export class VisitaComponent implements OnInit {
     this.o.subscribe(data => {this.visite = data;});
   }
 
+  addVisitaOnJSONServer() : void
+  {
+
+  }
 
   ngOnInit() {
   }
