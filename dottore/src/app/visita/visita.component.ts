@@ -41,10 +41,18 @@ export class VisitaComponent implements OnInit {
     this.o.subscribe(data => {this.visite = data;});
   }
 
-  addVisitaOnJSONServer() : void
-  {
-
-  }
+  addVisitaAtJSONServer(name: string, address: string, phone: string, email: string, date: string): void {
+   this.http
+     .post('https://jsonplaceholder.typicode.com/posts',
+       JSON.stringify({
+         name: name,
+         address: address,
+         phone: phone,
+         email: email,
+         date: date
+       })
+     )
+ }
 
   ngOnInit() {
   }
