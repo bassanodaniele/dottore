@@ -38,7 +38,7 @@ export class VisitaComponent implements OnInit {
   getVisitaFromJSONServer() : void
   {
     this.o = this.http.get<Visita[]>('https://jsonplaceholder.typicode.com/posts');
-    //this.o.subscribe(data => {this.fooData = data;});
+    this.o.subscribe(data => {this.visite = data;});
   }
 
 
