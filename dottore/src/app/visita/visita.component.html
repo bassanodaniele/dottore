@@ -1,0 +1,35 @@
+<h2>Form di inserimento</h2>
+
+<form>
+    nome e cognome:<input #name>
+    indirizzo:<input #address>
+    telefono:<input #phone>
+    email:<input #email>
+    data e ora:<input #date>
+    <button (click)="addVisita(name, address, phone, email, date)">inserisci</button>
+</form>
+
+
+<h2>Lista prenotazioni</h2>
+
+<ul class="cars">
+  <li *ngFor="let car of cars"
+    [class.selected]="car === selectedCar"
+    (click)="onSelect(car)">
+    <span class="badge">{{car.id}}</span> <span class="ins">{{car.name}}: {{car.costo}} €</span>
+  </li>
+</ul>
+
+<div *ngIf="selectedCar">
+
+  <h2>{{selectedCar.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{selectedCar.id}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="selectedCar.name" placeholder="name">
+    </label>
+  </div>
+
+</div>
+<hr>
+<app-car-view *ngIf="selectedCar" [ciao]="selectedCar"></app-car-view>
